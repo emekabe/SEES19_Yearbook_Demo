@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SEES 19 Yearbook Demo</string>
+    <string name="sees_19">SEES \'19</string>
+    <string name="yearbook_demo">Yearbook Demo</string>
 </resources>
