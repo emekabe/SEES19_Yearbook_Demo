@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "871497938193",
+    "firebase_url": "https://sees-19-yearbook-demo.firebaseio.com",
+    "project_id": "sees-19-yearbook-demo",
+    "storage_bucket": "sees-19-yearbook-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:871497938193:android:31b80807974668b32408b0",
+        "android_client_info": {
+          "package_name": "com.emekachukwulobe.sees19yearbookdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "871497938193-vdgccv90qqpq6jc0cs910j2esvb3g0ql.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.emekachukwulobe.sees19yearbookdemo",
+            "certificate_hash": "0e998abb70b7aaffa7f9cd71b61f184aacd063f8"
+          }
+        },
+        {
+          "client_id": "871497938193-n4qe6ivi5b7938h8pvrs1iv7ttmpejc8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk0nCPM1OV3XXnA28BFwhuG5lE2-vlLAM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "871497938193-n4qe6ivi5b7938h8pvrs1iv7ttmpejc8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

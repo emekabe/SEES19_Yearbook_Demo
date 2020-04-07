@@ -1,42 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/bg_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ma_background_01" />
+
+
+
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#DF000000"/>
+        android:background="#C5000000"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bigbox">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/sees19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="50dp"
+                android:text="@string/sees_19"
+                android:textColor="@color/myAppTheme"
+                android:textSize="52sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/yearbookText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yearbook_demo"
+                android:textColor="@color/myAppTheme"
+                android:textSize="32sp"
+                android:textAllCaps="true"
+                android:layout_below="@+id/sees19"
+                android:layout_marginLeft="10dp"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
     <TextView
-        android:id="@+id/sees19"
+        android:id="@+id/random_stat_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/sees_19"
+        android:text="Random Stat"
+        android:padding="16dp"
         android:textColor="@color/myAppTheme"
-        android:textSize="52sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/yearbookText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/yearbook_demo"
-        android:textColor="@color/myAppTheme"
-        android:textSize="32sp"
-        android:textAllCaps="true"
-        android:layout_below="@+id/sees19"
-        android:layout_marginLeft="10dp"/>
+        android:layout_above="@+id/bigbox"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/theme_border"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"/>
 
     <LinearLayout
+        android:id="@+id/bigbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="#AA000000"
         android:layout_alignParentBottom="true">
 
         <View
@@ -50,11 +89,14 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/alumnus_button"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:foreground="?attr/selectableItemBackground"
-                android:gravity="center">
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -70,11 +112,14 @@
                 android:background="@color/myAppTheme"/>
 
             <LinearLayout
+                android:id="@+id/committee_button"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:foreground="?attr/selectableItemBackground"
-                android:gravity="center">
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -85,6 +130,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -96,11 +142,14 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/ebook_button"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:foreground="?attr/selectableItemBackground"
-                android:gravity="center">
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -115,11 +164,14 @@
                 android:background="@color/myAppTheme"/>
 
             <LinearLayout
+                android:id="@+id/hardcopy_button"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:clickable="true"
                 android:foreground="?attr/selectableItemBackground"
-                android:gravity="center">
+                android:gravity="center"
+                android:focusable="true">
 
                 <TextView
                     android:layout_width="wrap_content"
