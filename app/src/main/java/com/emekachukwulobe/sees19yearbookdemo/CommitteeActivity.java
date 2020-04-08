@@ -106,7 +106,7 @@ public class CommitteeActivity extends AppCompatActivity {
                         message = "Ogbeks.. Mowe Junior. How far na?";
                         break;
                     case 11:
-                        whatsAppNumber = "n/a";
+                        whatsAppNumber = "2347068726234";
                         message = "Dude.. How's it going?";
                         break;
                     case 12:
@@ -114,11 +114,11 @@ public class CommitteeActivity extends AppCompatActivity {
                         message = "Amos. The peace of the lord be with you.";
                         break;
                     case 13:
-                        whatsAppNumber = "n/a";
+                        whatsAppNumber = "2348115512207";
                         message = "Big man!!!";
                         break;
                     case 14:
-                        whatsAppNumber = "n/a";
+                        whatsAppNumber = "2348169812321";
                         message = "You this guy";
                         break;
                     case 15:
@@ -144,20 +144,16 @@ public class CommitteeActivity extends AppCompatActivity {
 
                 if (canGreet){
                     //Do stuff
-                    if (!whatsAppNumber.equals("n/a")){
-                        Intent sendIntent = new Intent();
-                        sendIntent.setAction(Intent.ACTION_VIEW);
-                        String url = "https://api.whatsapp.com/send?phone=" + whatsAppNumber + "&text=" + message;
-                        sendIntent.setData(Uri.parse(url));
+
+                    Intent sendIntent = new Intent();
+                    sendIntent.setAction(Intent.ACTION_VIEW);
+                    String url = "https://api.whatsapp.com/send?phone=" + whatsAppNumber + "&text=" + message;
+                    sendIntent.setData(Uri.parse(url));
 
 //                    Probably optional
 //                    sendIntent.setPackage("com.whatsapp");
 
-                        startActivity(sendIntent);
-                    } else {
-                        Toast.makeText(CommitteeActivity.this, "Not available for hello", Toast.LENGTH_SHORT).show();
-                    }
-
+                    startActivity(sendIntent);
                 }
                 else{
                     //Open that IG page
