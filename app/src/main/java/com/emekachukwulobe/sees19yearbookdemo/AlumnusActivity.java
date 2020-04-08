@@ -32,6 +32,7 @@ public class AlumnusActivity extends AppCompatActivity {
 
     private TextView alumniName;
     private TextView alumniNickname;
+    private TextView alumniProgramme;
     private TextView alumniQuestion;
     private TextView alumniAnswer;
 
@@ -104,11 +105,14 @@ public class AlumnusActivity extends AppCompatActivity {
         alumniNickname = findViewById(R.id.alumni_nickname);
         alumniQuestion = findViewById(R.id.alumni_question);
         alumniAnswer = findViewById(R.id.alumni_answer);
+        alumniProgramme = findViewById(R.id.alumni_programme);
 
+        //Set values to the dummy variables first before fetching them from the database (Just a little precaution.. to avoid 'null' things)
         alumniName.setText(Alumni.ALUMNI_NAME);
         alumniNickname.setText("(" + Alumni.ALUMNI_NICKNAME + ")");
         alumniQuestion.setText(Alumni.ALUMNI_QUESTION);
         alumniAnswer.setText(Alumni.ALUMNI_ANSWER);
+        alumniProgramme.setText(Alumni.ALUMNI_PROGRAMME);
 
         //Buttons
         twitterButton = findViewById(R.id.twitter_button);
@@ -202,6 +206,19 @@ public class AlumnusActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Alumni.ALUMNI_NICKNAME= dataSnapshot.getValue(String.class);
                 alumniNickname.setText("(" + Alumni.ALUMNI_NICKNAME + ")");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        alumniGroup.child("alumni_programme").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Alumni.ALUMNI_PROGRAMME= dataSnapshot.getValue(String.class);
+                alumniProgramme.setText(Alumni.ALUMNI_PROGRAMME);
             }
 
             @Override
@@ -334,6 +351,7 @@ public class AlumnusActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ControlCenter.STUDENT_AVAILABLE = dataSnapshot.getValue(String.class);
+                // Delete this child later.. It isn't necessary
             }
 
             @Override

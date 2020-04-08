@@ -86,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ControlCenter.HARDCOPY_AVAILABLE = dataSnapshot.getValue(String.class);
+                //Do if-else on whether to keep the hardcopy button visible or not
+
             }
 
             @Override

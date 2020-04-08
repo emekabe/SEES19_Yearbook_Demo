@@ -53,12 +53,22 @@
             android:background="#DDFFFFFF"/>
 
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:text="Loading image..."
+            android:textAlignment="center"
+            android:paddingTop="200dp"/>
+
+        <!-- The current src in this imageview won't be displayed. -->
         <ImageView
             android:id="@+id/alumni_pic"
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ma_background_02"/>
+            android:src="@drawable/ma_background_02" />
+
+
 
         <ScrollView
             android:layout_width="312dp"
@@ -82,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:text="My Name"
                     android:textColor="#FFFFFF"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -90,7 +100,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="(My Nickname)"
-                    android:textSize="20dp"
+                    android:textSize="18sp"
+                    android:textColor="#FFFFFF"/>
+
+                <TextView
+                    android:id="@+id/alumni_programme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Electrical or Computer"
+                    android:textSize="18sp"
                     android:textColor="#FFFFFF"/>
 
                 <LinearLayout
@@ -164,7 +182,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:layout_marginBottom="24dp">
+                    android:layout_marginBottom="52dp">
 
                     <TextView
                         android:id="@+id/page_button"
