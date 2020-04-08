@@ -4,6 +4,7 @@ public class Alumni {
 
     public static String ALUMNI_NAME = "";
     public static String ALUMNI_NICKNAME = "";
+    public static String ALUMNI_PROGRAMME = "";
     public static String ALUMNI_PIC = "Java_certificate.jpg";
     public static String TWITTER_HANDLE;
     public static String LINKEDIN_URL;
