@@ -27,7 +27,7 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="windowActionBarOverlay">true</item>
         <item name="colorPrimary">#00FFFFFF</item>
-        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorPrimaryDark">#0A7E52</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 

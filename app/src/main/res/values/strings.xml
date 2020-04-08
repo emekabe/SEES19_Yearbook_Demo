@@ -13,4 +13,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="about">About</string>
     <string name="exit">Exit</string>
+
+    <string name="hello">Hello </string>
 </resources>

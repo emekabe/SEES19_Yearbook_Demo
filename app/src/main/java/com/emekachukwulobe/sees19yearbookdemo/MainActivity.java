@@ -1,5 +1,6 @@
 package com.emekachukwulobe.sees19yearbookdemo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +13,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Random;
 
@@ -27,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
     TextView randomStatButton;
 
+    TextView seesTest;
+    TextView yearbookText;
+
     Random randomBg = new Random();
 
     int noToMessage;
@@ -38,6 +49,188 @@ public class MainActivity extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) actionBar.setTitle("");
+
+        seesTest = findViewById(R.id.sees19);
+        yearbookText = findViewById(R.id.yearbookText);
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference controlGroup = database.getReference("control_center");
+//        DatabaseReference alumniGroup = database.getReference("alumni_otd");
+        DatabaseReference ebook = database.getReference("ebook_link");
+
+//        controlGroup.child("loaded").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                ControlCenter.LOADED = dataSnapshot.getValue(String.class);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//        controlGroup.child("student_available").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                ControlCenter.STUDENT_AVAILABLE = dataSnapshot.getValue(String.class);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+
+        controlGroup.child("hardcopy_available").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                ControlCenter.HARDCOPY_AVAILABLE = dataSnapshot.getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+//        alumniGroup.child("alumni_name").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Alumni.ALUMNI_NAME= dataSnapshot.getValue(String.class);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//        alumniGroup.child("alumni_nickname").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Alumni.ALUMNI_NICKNAME= dataSnapshot.getValue(String.class);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//        alumniGroup.child("alumni_pic").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Alumni.ALUMNI_PIC= dataSnapshot.getValue(String.class);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//        alumniGroup.child("twitter_handle").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Alumni.TWITTER_HANDLE= dataSnapshot.getValue(String.class);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//        alumniGroup.child("linkedin_url").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Alumni.LINKEDIN_URL= dataSnapshot.getValue(String.class);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//        alumniGroup.child("ig_handle").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Alumni.IG_HANDLE= dataSnapshot.getValue(String.class);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//        alumniGroup.child("email").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Alumni.EMAIL= dataSnapshot.getValue(String.class);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//        alumniGroup.child("page_link").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                //Alumni.PAGE_LINK= dataSnapshot.getValue(String.class);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//        alumniGroup.child("question").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Alumni.ALUMNI_QUESTION= dataSnapshot.getValue(String.class);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+//
+//        alumniGroup.child("answer").addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Alumni.ALUMNI_ANSWER = dataSnapshot.getValue(String.class);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+
+
+        final String[] ebookLink = {"https://bit.ly/YourYearbook"};
+
+        ebook.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                ebookLink[0] = dataSnapshot.getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
 
         alumnusButton = findViewById(R.id.alumnus_button);
         committeeButton = findViewById(R.id.committee_button);
@@ -75,7 +268,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent openIntent = new Intent();
                 openIntent.setAction(Intent.ACTION_VIEW);
-                String url = "https://bit.ly/YourYearbook";
+                //String url = "https://bit.ly/YourYearbook";
+                String url = ebookLink[0];
                 openIntent.setData(Uri.parse(url));
                 startActivity(openIntent);
             }
@@ -174,6 +368,7 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_about) {
             //Open about
+            startActivity(new Intent(MainActivity.this, AboutActivity.class));
             return true;
         }
         if (id == R.id.action_exit) {

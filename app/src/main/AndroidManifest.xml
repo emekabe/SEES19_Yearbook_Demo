@@ -11,12 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".StatActivity"
-            android:theme="@style/StatsTheme"
+        <activity android:name=".AboutActivity"
+            android:label="About"/>
+        <activity android:name=".PageActivity"
+            android:label=""
+            android:launchMode="singleTop"
+            android:parentActivityName=".AlumnusActivity"/>
+        <activity
+            android:name=".StatActivity"
             android:label="Stats"
             android:launchMode="singleTop"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/StatsTheme" />
         <activity
             android:name=".CommitteeActivity"
             android:label="The Yearbook Committee"

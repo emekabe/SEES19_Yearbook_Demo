@@ -27,7 +27,7 @@ public class CommitteeActivity extends AppCompatActivity {
 
 
         ArrayList<Committee> committee = new ArrayList<>();
-        committee.add(new Committee("Babajide A. E.", "Editor-in-chief, Lead Photographer, Designer.", R.drawable.committee_01_aanu, true));
+        committee.add(new Committee("Babajide A.E.", "Editor-in-chief, Lead Photographer, Designer.", R.drawable.committee_01_aanu, true));
         committee.add(new Committee("Oki V.O. ", "Co-Lead Designer.", R.drawable.committee_02_victory, true));
         committee.add(new Committee("Illuezi-Ogbaudu O.", "Co-Lead Designer.", R.drawable.committee_03_mano, true));
         committee.add(new Committee("Ekechi K.A.", "Designer.", R.drawable.committee_04_alan, true));
@@ -35,7 +35,7 @@ public class CommitteeActivity extends AppCompatActivity {
         committee.add(new Committee("Balogun A.A.", "Editor, Data Collector, Secretary.", R.drawable.committee_06_abu, true));
         committee.add(new Committee("Badru A.D.", "Editor, Data Collector.", R.drawable.committee_07_dolapo, true));
         committee.add(new Committee("Obaseki O.T.", "Editor, Data Collector.", R.drawable.committee_08_sazi, true));
-        committee.add(new Committee("Ugwu K.A.", "Editor, Data Collector, Photographer", R.drawable.committee_09_kenecomp, true));
+        committee.add(new Committee("Ugwu K.A.", "Editor, Data Collector, Photographer.", R.drawable.committee_09_kenecomp, true));
         committee.add(new Committee("Awosika T.M.", "Editor, Data Collector.", R.drawable.committee_10_tomibaby, true));
         committee.add(new Committee("Ogbekile C.S.", "Editor, Data Collector.", R.drawable.committee_11_ogbeks, true));
         committee.add(new Committee("Adeyemo P.I.", "Editor, Data Collector.", R.drawable.committee_12_adeyemop, true));
