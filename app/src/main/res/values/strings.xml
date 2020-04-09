@@ -9,10 +9,19 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <string name="stats">Stats</string>
+    <string name="the_yearbook_committee">The Yearbook Committee</string>
+
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="about">About</string>
     <string name="exit">Exit</string>
 
     <string name="hello">Hello </string>
+    <string name="about_text">
+        This app was developed to serve as an extra for the yearbook made and released by a team of final year students led by Aanuoluwapo Eberechukwu Babajide from the 2019 set of the Department of Electrical/Electronics and Computer Engineering, University of Lagos.
+        \n\nExplore the app and have fun.
+        \n\nFor help and questions, contact the developer on cachukwulobe@gmail.com, or call +2348106872636.
+        \n\nVisit https://github.com/emekabe/SEES19_Yearbook_Demo for the source code and star the repo. :)
+    </string>
 </resources>

@@ -22,7 +22,10 @@
         </activity>
         <activity
             android:name=".AboutActivity"
-            android:label="About" />
+            android:label="@string/about"
+            android:theme="@style/AboutTheme"
+            android:launchMode="singleTop"
+            android:parentActivityName=".AlumnusActivity" />
         <activity
             android:name=".PageActivity"
             android:label=""
@@ -30,13 +33,13 @@
             android:parentActivityName=".AlumnusActivity" />
         <activity
             android:name=".StatActivity"
-            android:label="Stats"
+            android:label="@string/stats"
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity"
             android:theme="@style/StatsTheme" />
         <activity
             android:name=".CommitteeActivity"
-            android:label="The Yearbook Committee"
+            android:label="@string/the_yearbook_committee"
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity"
             android:theme="@style/CommitteeTheme" />
