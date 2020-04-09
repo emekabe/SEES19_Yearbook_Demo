@@ -53,7 +53,7 @@
         <item name="colorPrimaryDark">#8A8A8A</item>
         <item name="colorAccent">@color/colorAccent</item>
 
-<!--        <item name="homeAsUpIndicator">@drawable/ic_arrow_back_18pt_2x</item>-->
+        <item name="homeAsUpIndicator">@drawable/back_arrow_icon_scaled</item>
 
         <item name="android:navigationBarColor">#8A8A8A</item>
     </style>
