@@ -11,6 +11,8 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="windowActionBarOverlay">true</item>
         <item name="colorPrimary">#00FFFFFF</item>
+
+        <item name="android:navigationBarColor">#000000</item>
     </style>
 
 
@@ -20,6 +22,8 @@
         <item name="colorPrimary">#71076B</item>
         <item name="colorPrimaryDark">#590755</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:navigationBarColor">#590755</item>
     </style>
 
     <style name="AlumniTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -29,6 +33,8 @@
         <item name="colorPrimary">#00FFFFFF</item>
         <item name="colorPrimaryDark">#0A7E52</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:navigationBarColor">#0A7E52</item>
     </style>
 
 
@@ -57,6 +63,8 @@
         <item name="colorPrimary">#000000</item>
         <item name="colorPrimaryDark">#000000</item>
         <item name="colorAccent">@color/colorPrimary</item>
+
+        <item name="android:navigationBarColor">#000000</item>
 
         <item name="android:windowBackground">@drawable/splash_screen_background</item>
     </style>
