@@ -124,38 +124,42 @@
                     <Button
                         android:id="@+id/twitter_button"
                         android:layout_width="150dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="48dp"
                         android:text="Twitter"
                         android:textAllCaps="false"
                         android:backgroundTint="#1DA1F3"
-                        android:textColor="#FFFFFF" />
+                        android:textColor="#FFFFFF"
+                        android:drawableLeft="@drawable/button_ic_twitter_scaled"/>
 
                     <Button
                         android:id="@+id/linkedin_button"
                         android:layout_width="150dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="48dp"
                         android:text="LinkedIn"
                         android:textAllCaps="false"
                         android:backgroundTint="#007B9B"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:drawableLeft="@drawable/button_ic_linkedin_scaled"/>
 
                     <Button
                         android:id="@+id/ig_button"
                         android:layout_width="150dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="48dp"
                         android:text="Instagram"
                         android:textAllCaps="false"
                         android:backgroundTint="#D22A9B"
-                        android:textColor="#FFFFFF"/>
+                        android:textColor="#FFFFFF"
+                        android:drawableLeft="@drawable/button_ic_instagram_scaled"/>
 
                     <Button
                         android:id="@+id/email_button"
                         android:layout_width="150dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="48dp"
                         android:text="Email"
                         android:textAllCaps="false"
                         android:backgroundTint="#FFFFFF"
-                        android:textColor="#000000"/>
+                        android:textColor="#000000"
+                        android:drawableLeft="@drawable/button_ic_email_scaled"/>
 
                 </LinearLayout>
 

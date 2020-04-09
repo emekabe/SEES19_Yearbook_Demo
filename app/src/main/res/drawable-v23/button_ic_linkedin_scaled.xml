@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android = "http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+
+
+    <!--    width and height can also be included as attributes -->
+    <item
+        android:width="26dp"
+        android:height="26dp"
+        android:gravity="center"
+        android:drawable="@drawable/button_ic_linkedin">
+
+    </item>
+
+</layer-list>
