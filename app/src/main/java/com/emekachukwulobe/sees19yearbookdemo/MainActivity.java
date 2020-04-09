@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -28,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView bgImage;
 
-    LinearLayout alumnusButton;
-    LinearLayout committeeButton;
-    LinearLayout ebookButton;
-    LinearLayout hardcopyButton;
+    Button alumnusButton;
+    Button committeeButton;
+    Button ebookButton;
+    Button hardcopyButton;
 
-    TextView randomStatButton;
+    Button randomStatButton;
 
     TextView seesTest;
     TextView yearbookText;
@@ -55,38 +56,19 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference controlGroup = database.getReference("control_center");
-//        DatabaseReference alumniGroup = database.getReference("alumni_otd");
         DatabaseReference ebook = database.getReference("ebook_link");
 
-//        controlGroup.child("loaded").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                ControlCenter.LOADED = dataSnapshot.getValue(String.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//        controlGroup.child("student_available").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                ControlCenter.STUDENT_AVAILABLE = dataSnapshot.getValue(String.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
 
         controlGroup.child("hardcopy_available").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 ControlCenter.HARDCOPY_AVAILABLE = dataSnapshot.getValue(String.class);
                 //Do if-else on whether to keep the hardcopy button visible or not
+                if (!ControlCenter.HARDCOPY_AVAILABLE.toLowerCase().equals("yes")){
+                    hardcopyButton.setVisibility(View.GONE);
+                } else {
+                    hardcopyButton.setVisibility(View.VISIBLE);
+                }
 
             }
 
@@ -95,128 +77,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-//        alumniGroup.child("alumni_name").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                Alumni.ALUMNI_NAME= dataSnapshot.getValue(String.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//        alumniGroup.child("alumni_nickname").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                Alumni.ALUMNI_NICKNAME= dataSnapshot.getValue(String.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//        alumniGroup.child("alumni_pic").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                Alumni.ALUMNI_PIC= dataSnapshot.getValue(String.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//        alumniGroup.child("twitter_handle").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                Alumni.TWITTER_HANDLE= dataSnapshot.getValue(String.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//        alumniGroup.child("linkedin_url").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                Alumni.LINKEDIN_URL= dataSnapshot.getValue(String.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//        alumniGroup.child("ig_handle").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                Alumni.IG_HANDLE= dataSnapshot.getValue(String.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//        alumniGroup.child("email").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                Alumni.EMAIL= dataSnapshot.getValue(String.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//        alumniGroup.child("page_link").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                //Alumni.PAGE_LINK= dataSnapshot.getValue(String.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//        alumniGroup.child("question").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                Alumni.ALUMNI_QUESTION= dataSnapshot.getValue(String.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//        alumniGroup.child("answer").addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                Alumni.ALUMNI_ANSWER = dataSnapshot.getValue(String.class);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
 
 
         final String[] ebookLink = {"https://bit.ly/YourYearbook"};
@@ -239,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         ebookButton = findViewById(R.id.ebook_button);
         hardcopyButton = findViewById(R.id.hardcopy_button);
 
-        randomStatButton = findViewById(R.id.random_stat_text);
+        randomStatButton = findViewById(R.id.random_stat_button);
 
         randomStatButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -270,7 +130,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent openIntent = new Intent();
                 openIntent.setAction(Intent.ACTION_VIEW);
-                //String url = "https://bit.ly/YourYearbook";
                 String url = ebookLink[0];
                 openIntent.setData(Uri.parse(url));
                 startActivity(openIntent);
@@ -301,9 +160,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(sendIntent);
             }
         });
-//
-//        bgImage = findViewById(R.id.bg_image);
-//        setNewBackgroundImage ();
     }
 
     @Override
@@ -312,6 +168,8 @@ public class MainActivity extends AppCompatActivity {
 
         bgImage = findViewById(R.id.bg_image);
         setNewBackgroundImage ();
+
+        // Change the guy to message for hardcopy
         noToMessage = randomBg.nextInt(2);
     }
 

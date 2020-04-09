@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
@@ -85,9 +86,9 @@ public class AlumnusActivity extends AppCompatActivity {
         alimniPic = findViewById(R.id.alumni_pic);
 //
 
-        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) alimniPic.getLayoutParams();
-        //params.setMargins(0, sizeindp, 0, 0);
-        params.setMargins(0, 0, 0, 0);
+//        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) alimniPic.getLayoutParams();
+//        //params.setMargins(0, sizeindp, 0, 0);
+//        params.setMargins(0, 0, 0, 0);
 
 
 
@@ -248,11 +249,17 @@ public class AlumnusActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Alumni.TWITTER_HANDLE= dataSnapshot.getValue(String.class);
+
+                if (Alumni.TWITTER_HANDLE.toLowerCase().equals("n/a")){
+                    twitterButton.setVisibility(View.GONE);
+                } else {
+                    twitterButton.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                // Maybe I should just make it gone here as well
             }
         });
 
@@ -260,6 +267,12 @@ public class AlumnusActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Alumni.LINKEDIN_URL= dataSnapshot.getValue(String.class);
+
+                if (Alumni.LINKEDIN_URL.toLowerCase().equals("n/a")){
+                    linkedinButton.setVisibility(View.GONE);
+                } else {
+                    linkedinButton.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override
@@ -272,6 +285,12 @@ public class AlumnusActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Alumni.IG_HANDLE= dataSnapshot.getValue(String.class);
+
+                if (Alumni.IG_HANDLE.toLowerCase().equals("n/a")){
+                    igButton.setVisibility(View.GONE);
+                } else {
+                    igButton.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override
@@ -284,6 +303,12 @@ public class AlumnusActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Alumni.EMAIL= dataSnapshot.getValue(String.class);
+
+                if (Alumni.EMAIL.toLowerCase().equals("n/a")){
+                    emailButton.setVisibility(View.GONE);
+                } else {
+                    emailButton.setVisibility(View.VISIBLE);
+                }
             }
 
             @Override
@@ -338,6 +363,9 @@ public class AlumnusActivity extends AppCompatActivity {
                 if (ControlCenter.LOADED.toLowerCase().equals("yes")){
                     loadingView.setVisibility(View.GONE);
                     profileView.setVisibility(View.VISIBLE);
+                } else if (ControlCenter.LOADED.toLowerCase().equals("nobody")){
+                    // No one is available
+                    Toast.makeText(AlumnusActivity.this, "Nobody today.\nCheck again later", Toast.LENGTH_SHORT).show();
                 }
             }
 

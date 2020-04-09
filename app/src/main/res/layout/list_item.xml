@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- How a committee member is displayed on the list -->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -51,7 +54,7 @@
         android:text="Say hi"
         android:textSize="18sp"
         android:textColor="#2B2B2B"
-        android:background="@drawable/theme_border"
+        android:background="@drawable/theme_border_committee_buttons"
         android:layout_alignParentRight="true"
         android:layout_marginRight="5dp"
         android:layout_marginTop="72dp"/>

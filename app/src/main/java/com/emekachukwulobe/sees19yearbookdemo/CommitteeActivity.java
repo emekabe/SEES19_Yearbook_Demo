@@ -57,7 +57,7 @@ public class CommitteeActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 boolean canGreet = true;
                 String whatsAppNumber, message;
-                whatsAppNumber = "n/a";
+                whatsAppNumber = "234...";
                 message = "Ahh";
                 String username = "n/a";
                 switch (position){
@@ -150,9 +150,6 @@ public class CommitteeActivity extends AppCompatActivity {
                     String url = "https://api.whatsapp.com/send?phone=" + whatsAppNumber + "&text=" + message;
                     sendIntent.setData(Uri.parse(url));
 
-//                    Probably optional
-//                    sendIntent.setPackage("com.whatsapp");
-
                     startActivity(sendIntent);
                 }
                 else{
@@ -161,9 +158,6 @@ public class CommitteeActivity extends AppCompatActivity {
                     openIntent.setAction(Intent.ACTION_VIEW);
                     String url = "https://instagram.com/" + username;
                     openIntent.setData(Uri.parse(url));
-
-//                    Probably optional
-//                    sendIntent.setPackage("com.instagram.android");
 
                     startActivity(openIntent);
                 }

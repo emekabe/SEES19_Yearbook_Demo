@@ -10,7 +10,7 @@ public class Alumni {
     public static String LINKEDIN_URL;
     public static String IG_HANDLE;
     public static String EMAIL;
-    public static String PAGE_LINK = "https://bit.ly/jenniferteeth";
+    public static String PAGE_LINK = "https://github.com/emekabe";
 
     public static String ALUMNI_QUESTION = "";
     public static String ALUMNI_ANSWER = "";

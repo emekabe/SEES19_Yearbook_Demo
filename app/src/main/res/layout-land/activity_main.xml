@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/bg_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ma_background_01" />
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C5000000"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/sees19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="50dp"
+                android:text="@string/sees_19"
+                android:textColor="@color/myAppTheme"
+                android:textSize="52sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/yearbookText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yearbook_demo"
+                android:textColor="@color/myAppTheme"
+                android:textSize="32sp"
+                android:textAllCaps="true"
+                android:layout_marginStart="16dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+<!--            The parent LinearLayout is not useless. The gravity attribute is being used-->
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="30dp">
+
+                    <Button
+                        android:id="@+id/random_stat_button"
+                        android:text="Random Stat"
+                        android:layout_width="match_parent"
+                        style="@style/mainButton"/>
+
+                    <Button
+                        android:id="@+id/alumnus_button"
+                        android:layout_width="match_parent"
+                        android:text="Aluminus of the Day"
+                        style="@style/mainButton"/>
+
+                    <Button
+                        android:id="@+id/committee_button"
+                        android:layout_width="match_parent"
+                        android:text="Meet the Committee"
+                        style="@style/mainButton"/>
+
+                    <Button
+                        android:id="@+id/ebook_button"
+                        android:layout_width="match_parent"
+                        android:text="Read/Download E-book"
+                        style="@style/mainButton"/>
+
+                    <Button
+                        android:id="@+id/hardcopy_button"
+                        android:layout_width="match_parent"
+                        android:text="Get Hardcopy"
+                        style="@style/mainButton"/>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

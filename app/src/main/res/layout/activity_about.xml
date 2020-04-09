@@ -4,35 +4,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    android:padding="16dp"
     tools:context=".AboutActivity">
 
     <ImageView
+        android:layout_margin="16dp"
         android:layout_width="400dp"
         android:layout_height="300dp"
         android:src="@drawable/splash"
         android:layout_centerInParent="true"
         android:scaleType="centerInside"/>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+
         android:background="#A8000000">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="@color/myAppTheme"
-            android:layout_marginBottom="32dp"/>
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/myAppTheme"
-            android:text="@string/about_text"/>
-    </LinearLayout>
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="@color/myAppTheme"
+                android:layout_marginBottom="32dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/myAppTheme"
+                android:text="@string/about_text"/>
+        </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
