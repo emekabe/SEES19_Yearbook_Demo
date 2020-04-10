@@ -126,9 +126,8 @@ public class AlumnusActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent openIntent = new Intent();
                 openIntent.setAction(Intent.ACTION_VIEW);
-                String url = "https://m.twitter.com/" + Alumni.TWITTER_HANDLE;
+                String url = "https://twitter.com/" + Alumni.TWITTER_HANDLE;
                 openIntent.setData(Uri.parse(url));
-//                sendIntent.setPackage("com.android.chrome");
                 startActivity(openIntent);
             }
         });
@@ -140,7 +139,6 @@ public class AlumnusActivity extends AppCompatActivity {
                 openIntent.setAction(Intent.ACTION_VIEW);
                 String url = Alumni.LINKEDIN_URL;  // Probably concatenate with "https://" later
                 openIntent.setData(Uri.parse(url));
-//                sendIntent.setPackage("com.android.chrome");
                 startActivity(openIntent);
             }
         });
@@ -152,7 +150,7 @@ public class AlumnusActivity extends AppCompatActivity {
                 openIntent.setAction(Intent.ACTION_VIEW);
                 String url = "https://instagram.com/" + Alumni.IG_HANDLE;
                 openIntent.setData(Uri.parse(url));
-//                sendIntent.setPackage("com.android.chrome");
+
                 startActivity(openIntent);
             }
         });
@@ -161,9 +159,10 @@ public class AlumnusActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setData(Uri.parse("mailto:" + Alumni.EMAIL)); // only email apps should handle this
+
+                intent.setData(Uri.parse("mailto:")); // only email apps should handle this
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{Alumni.EMAIL});
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Hello " + Alumni.ALUMNI_NICKNAME);
-//                intent.putExtra(Intent.EXTRA_TEXT, message);
 
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
