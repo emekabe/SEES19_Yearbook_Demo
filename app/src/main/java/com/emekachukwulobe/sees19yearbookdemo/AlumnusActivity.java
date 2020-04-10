@@ -29,7 +29,6 @@ import com.google.firebase.storage.StorageReference;
 public class AlumnusActivity extends AppCompatActivity {
 
     private ImageView alimniPic;
-    //private TextView name;
 
     private TextView alumniName;
     private TextView alumniNickname;
@@ -48,59 +47,18 @@ public class AlumnusActivity extends AppCompatActivity {
 
     private RelativeLayout loadingView;
     private RelativeLayout profileView;
-//    private LinearLayout profileViewLandscape;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alumnus);
 
-        ActionBar actionBar = getSupportActionBar();
-
-//        int sizeindp = actionBar.getHeight();
-
-        int sizeindp = 4;
-
-        TypedValue tv = new TypedValue();
-
-        int actionBarHeight = 1;
-
-        if(getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true)){
-            actionBarHeight = TypedValue.complexToDimensionPixelSize(tv.data, getResources().getDisplayMetrics());
-        }
-
-//        name = findViewById(R.id.alumni_name);
-//        name.setText("" + actionBarHeight);
-
-        sizeindp = actionBarHeight;
-        sizeindp *= -1;
-
-        //int marginindp = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, sizeindp, getResources().getDisplayMetrics());
-//
-//
-
         profileView = findViewById(R.id.profile_view);
         loadingView = findViewById(R.id.pb_view);
-        //profileViewLandscape = findViewById(R.id.profile_view_landscape);
 
         alimniPic = findViewById(R.id.alumni_pic);
-//
+        alimniPic.setVisibility(View.INVISIBLE);
 
-//        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) alimniPic.getLayoutParams();
-//        //params.setMargins(0, sizeindp, 0, 0);
-//        params.setMargins(0, 0, 0, 0);
-
-
-
-        //mStorageReference = FirebaseStorage.getInstance().getReference();
-
-        //StorageReference ahhh = mStorageReference.child("Java_certificate.jpg");
-
-        StorageReference ahhh = FirebaseStorage.getInstance().getReference(Alumni.ALUMNI_PIC);
-
-        Glide.with(this /* context */)
-                .load(ahhh)
-                .into(alimniPic);
 
         alumniName = findViewById(R.id.alumni_name);
         alumniNickname = findViewById(R.id.alumni_nickname);
@@ -227,15 +185,24 @@ public class AlumnusActivity extends AppCompatActivity {
             }
         });
 
+
         alumniGroup.child("alumni_pic").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Alumni.ALUMNI_PIC= dataSnapshot.getValue(String.class);
                 StorageReference loadedPic = FirebaseStorage.getInstance().getReference(Alumni.ALUMNI_PIC);
 
-                Glide.with(AlumnusActivity.this /* context */)
-                        .load(loadedPic)
-                        .into(alimniPic);
+                //Fix for the crash
+                try{
+                    Glide.with(AlumnusActivity.this /* context */)
+                            .load(loadedPic)
+                            .into(alimniPic);
+
+                    alimniPic.setVisibility(View.VISIBLE);
+                } catch (Exception e){
+                    Toast.makeText(AlumnusActivity.this, "Please wait.", Toast.LENGTH_SHORT).show();
+                }
+
             }
 
             @Override
@@ -362,10 +329,12 @@ public class AlumnusActivity extends AppCompatActivity {
                 if (ControlCenter.LOADED.toLowerCase().equals("yes")){
                     loadingView.setVisibility(View.GONE);
                     profileView.setVisibility(View.VISIBLE);
+
+
                 } else if (ControlCenter.LOADED.toLowerCase().equals("nobody")){
                     // No one is available
                     Toast.makeText(AlumnusActivity.this, "Nobody today.\nCheck again later", Toast.LENGTH_SHORT).show();
-                }
+                } //else just keep them waiting.. lol
             }
 
             @Override
@@ -387,4 +356,5 @@ public class AlumnusActivity extends AppCompatActivity {
             }
         });
     }
+
 }
