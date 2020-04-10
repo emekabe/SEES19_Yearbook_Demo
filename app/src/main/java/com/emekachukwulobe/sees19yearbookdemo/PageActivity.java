@@ -2,6 +2,7 @@ package com.emekachukwulobe.sees19yearbookdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -29,6 +30,16 @@ public class PageActivity extends AppCompatActivity {
 
         page = findViewById(R.id.webview);
 
+        if (page.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+            if (ControlCenter.showRotateToast == true){
+                Toast.makeText(this, "Rotate the screen to view the page in fullscreen.", Toast.LENGTH_LONG).show();
+                ControlCenter.showRotateToast = false; //Dont give instructions again when the user navigates back to this activity
+            }
+
+        } else {
+            ControlCenter.showRotateToast = false;
+        }
+
         renderWebPage(Alumni.PAGE_LINK, page);
 
     }
@@ -47,7 +58,6 @@ public class PageActivity extends AppCompatActivity {
                 page.setVisibility(View.VISIBLE);
                 progressBarCircular.setVisibility(View.GONE);
                 progressBarHorizontal.setVisibility(View.GONE);
-//                Toast.makeText(PageActivity.this, "Page loaded.", Toast.LENGTH_LONG).show();
             }
         });
 

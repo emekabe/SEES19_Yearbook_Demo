@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF0000"
+    android:background="#08C37B"
     tools:context=".AlumnusActivity">
 
     <RelativeLayout
@@ -54,11 +53,19 @@
 
 
         <TextView
+            android:id="@+id/loading_image_text"
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:text="Loading image..."
+            android:text="@string/loading_image"
             android:textAlignment="center"
             android:paddingTop="200dp"/>
+
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="160dp"
+            android:layout_marginBottom="541dp" />
 
         <!-- The current src in this imageview won't be displayed. -->
         <ImageView
@@ -66,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ma_background_02" />
+            android:src="@drawable/ma_background_02"/>
 
 
 
@@ -207,7 +214,5 @@
         </ScrollView>
 
     </RelativeLayout>
-
-
 
 </RelativeLayout>

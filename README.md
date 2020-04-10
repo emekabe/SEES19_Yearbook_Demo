@@ -5,6 +5,7 @@ Yearbook app for my class
 This app makes use of the following firebase features
 - Cloud storage
 - Realtime database
+- Cloud messaging
 
 # App features
 - Random stats from the yearbook

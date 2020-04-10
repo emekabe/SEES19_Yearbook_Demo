@@ -86,7 +86,7 @@
         <item name="android:textAlignment">center</item>
         <item name="android:textColor">@color/myAppTheme</item>
         <item name="android:padding">16dp</item>
-        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
         <item name="android:background">@drawable/theme_border_main_buttons_ripple</item>
         <item name="android:textAllCaps">false</item>
     </style>

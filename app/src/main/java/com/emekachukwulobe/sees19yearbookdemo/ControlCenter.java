@@ -5,4 +5,6 @@ public class ControlCenter {
     public static String STUDENT_AVAILABLE;
     public static String HARDCOPY_AVAILABLE;
 
+    public static boolean showRotateToast = true;
+
 }

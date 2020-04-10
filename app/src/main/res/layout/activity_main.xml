@@ -47,7 +47,7 @@
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="36dp">
 
         <Button
             android:id="@+id/random_stat_button"
@@ -56,7 +56,7 @@
 
         <Button
             android:id="@+id/alumnus_button"
-            android:text="Aluminus of the Day"
+            android:text="Alumnus of the Day"
             style="@style/mainButton"/>
 
         <Button
@@ -71,7 +71,7 @@
 
         <Button
             android:id="@+id/hardcopy_button"
-            android:text="Get Hardcopy"
+            android:text="Get Hard Copy"
             style="@style/mainButton"/>
 
     </LinearLayout>

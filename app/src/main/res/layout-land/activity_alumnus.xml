@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF0000"
+    android:background="#08C37B"
     tools:context=".AlumnusActivity">
 
 
@@ -42,14 +42,35 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-
-            <ImageView
-                android:id="@+id/alumni_pic"
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="6"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ma_background_02"/>
+                android:layout_weight="6">
+
+                <TextView
+                    android:id="@+id/loading_image_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/loading_image"
+                    android:textAlignment="center"
+                    android:background="#DDFFFFFF"
+                    android:paddingTop="200dp"/>
+
+                <ProgressBar
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="170dp" />
+
+                <ImageView
+                    android:id="@+id/alumni_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ma_background_02"/>
+
+            </RelativeLayout>
+
 
             <RelativeLayout
                 android:layout_width="0dp"

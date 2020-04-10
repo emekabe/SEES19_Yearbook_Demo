@@ -82,7 +82,7 @@
                     <Button
                         android:id="@+id/alumnus_button"
                         android:layout_width="match_parent"
-                        android:text="Aluminus of the Day"
+                        android:text="Alumnus of the Day"
                         style="@style/mainButton"/>
 
                     <Button
@@ -100,7 +100,7 @@
                     <Button
                         android:id="@+id/hardcopy_button"
                         android:layout_width="match_parent"
-                        android:text="Get Hardcopy"
+                        android:text="Get Hard Copy"
                         style="@style/mainButton"/>
 
                 </LinearLayout>

@@ -320,7 +320,7 @@ public class AlumnusActivity extends AppCompatActivity {
         alumniGroup.child("page_link").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //Alumni.PAGE_LINK= dataSnapshot.getValue(String.class);
+                Alumni.PAGE_LINK= dataSnapshot.getValue(String.class);
             }
 
             @Override
