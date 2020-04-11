@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Say hi"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textColor="#2B2B2B"
         android:background="@drawable/theme_border_committee_buttons"
         android:layout_alignParentRight="true"

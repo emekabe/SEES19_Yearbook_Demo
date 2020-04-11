@@ -200,7 +200,7 @@ public class AlumnusActivity extends AppCompatActivity {
 
                     alimniPic.setVisibility(View.VISIBLE);
                 } catch (Exception e){
-                    Toast.makeText(AlumnusActivity.this, "Please wait.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AlumnusActivity.this, "Reconnecting", Toast.LENGTH_SHORT).show();
                 }
 
             }

@@ -75,7 +75,7 @@ public class CommitteeActivity extends AppCompatActivity {
                         break;
                     case 3:
                         whatsAppNumber = "2348163610689";
-                        message = "Fat manu fan. No title for you people for the next decade";
+                        message = "Fat man utd fan. No title for you people for the next decade";
                         break;
                     case 4:
                         whatsAppNumber = "2348185528439";

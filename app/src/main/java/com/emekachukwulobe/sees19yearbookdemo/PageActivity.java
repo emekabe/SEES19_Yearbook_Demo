@@ -32,7 +32,7 @@ public class PageActivity extends AppCompatActivity {
 
         if (page.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
             if (ControlCenter.showRotateToast == true){
-                Toast.makeText(this, "Rotate the screen to view the page in fullscreen.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Rotate the device to view the page in fullscreen.", Toast.LENGTH_LONG).show();
                 ControlCenter.showRotateToast = false; //Dont give instructions again when the user navigates back to this activity
             }
 
