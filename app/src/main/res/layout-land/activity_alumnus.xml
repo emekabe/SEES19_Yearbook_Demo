@@ -91,7 +91,7 @@
                 <ScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/alumni_bg"
+                    android:background="@drawable/alumni_bg_land"
                     android:layout_centerHorizontal="true">
 
                     <LinearLayout

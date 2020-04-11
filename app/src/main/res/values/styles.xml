@@ -12,7 +12,13 @@
         <item name="windowActionBarOverlay">true</item>
         <item name="colorPrimary">#00FFFFFF</item>
 
-        <item name="android:navigationBarColor">#000000</item>
+<!--        <item name="android:navigationBarColor">#00000000</item>-->
+<!--        <item name="android:statusBarColor">#00000000</item>-->
+
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+
+<!--        <item name="android:fitsSystemWindows">true</item>-->
     </style>
 
 

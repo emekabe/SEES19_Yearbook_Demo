@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
         android:text="@string/sees_19"
         android:textColor="@color/myAppTheme"
         android:textSize="52sp"
@@ -47,7 +47,7 @@
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="36dp">
+        android:layout_marginBottom="56dp">
 
         <Button
             android:id="@+id/random_stat_button"
