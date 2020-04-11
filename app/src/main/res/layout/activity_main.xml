@@ -17,7 +17,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#C5000000"/>
+        android:background="#B9000000"/>
 
     <TextView
         android:id="@+id/sees19"
@@ -47,7 +47,7 @@
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="56dp">
+        android:layout_marginBottom="60dp">
 
         <Button
             android:id="@+id/random_stat_button"

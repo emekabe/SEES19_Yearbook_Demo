@@ -28,7 +28,7 @@ public class StatActivity extends AppCompatActivity {
 
         TextView textView = new TextView(this);
         textView.setText("Stat");
-        textView.setTextSize(25);
+        textView.setTextSize(20);
         textView.setTypeface(Typeface.SANS_SERIF, Typeface.BOLD);
 
         textView.setTextColor(Color.parseColor("#000000"));

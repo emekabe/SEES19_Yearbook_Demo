@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 noToMessage = randomBg.nextInt(2);
                 String phoneNo;
-                String message = "I want to get the hardcopy of the yearbook";
+                String message = "I want to get a hard copy of the yearbook";
                 if (noToMessage == 0){//Message Aanu
                     phoneNo = "2349060204500";
                 }
