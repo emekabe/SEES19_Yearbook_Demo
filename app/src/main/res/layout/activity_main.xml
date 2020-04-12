@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,69 +13,88 @@
         android:scaleType="centerCrop"
         android:src="@drawable/ma_background_01" />
 
-
-
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#B9000000"/>
 
-    <TextView
-        android:id="@+id/sees19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="80dp"
-        android:text="@string/sees_19"
-        android:textColor="@color/myAppTheme"
-        android:textSize="52sp"
-        android:textStyle="bold" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/yearbookText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/yearbook_demo"
-        android:textColor="@color/myAppTheme"
-        android:textSize="32sp"
-        android:textAllCaps="true"
-        android:layout_below="@+id/sees19"
-        android:layout_marginLeft="16dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/the_buttons"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.335">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="60dp">
+            <TextView
+                android:id="@+id/sees19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/sees_19"
+                android:textColor="@color/myAppTheme"
+                android:textSize="52sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/random_stat_button"
-            android:text="Random Stat"
-            style="@style/mainButton"/>
+            <TextView
+                android:id="@+id/yearbookText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/yearbook_demo"
+                android:textAllCaps="true"
+                android:textColor="@color/myAppTheme"
+                android:textSize="32sp" />
 
-        <Button
-            android:id="@+id/alumnus_button"
-            android:text="Alumnus of the Day"
-            style="@style/mainButton"/>
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/committee_button"
-            android:text="Meet the Committee"
-            style="@style/mainButton"/>
+        <LinearLayout
+            android:id="@+id/the_buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.813">
 
-        <Button
-            android:id="@+id/ebook_button"
-            android:text="Read/Download E-book"
-            style="@style/mainButton"/>
+            <Button
+                android:id="@+id/random_stat_button"
+                style="@style/mainButton"
+                android:text="Random Stat" />
 
-        <Button
-            android:id="@+id/hardcopy_button"
-            android:text="Get Hard Copy"
-            style="@style/mainButton"/>
+            <Button
+                android:id="@+id/alumnus_button"
+                style="@style/mainButton"
+                android:text="Alumnus of the Day" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/committee_button"
+                style="@style/mainButton"
+                android:text="Meet the Committee" />
 
+            <Button
+                android:id="@+id/ebook_button"
+                style="@style/mainButton"
+                android:text="Read/Download E-book" />
+
+            <Button
+                android:id="@+id/hardcopy_button"
+                style="@style/mainButton"
+                android:text="Get Hard Copy" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
