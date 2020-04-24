@@ -26,4 +26,5 @@
     </string>
     <string name="loading_image">Loading image...</string>
     <string name="view_their_page">View their page</string>
+    <string name="app_version">v1.1</string>
 </resources>
