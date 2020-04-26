@@ -77,7 +77,7 @@
             <Button
                 android:id="@+id/alumnus_button"
                 style="@style/mainButton"
-                android:text="Alumnus of the Day" />
+                android:text="Transformer of the Day" />
 
             <Button
                 android:id="@+id/committee_button"

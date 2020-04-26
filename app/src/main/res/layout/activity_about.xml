@@ -36,7 +36,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/myAppTheme"
+                android:textColor="#A8A8A8"
                 android:text="@string/app_version"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:layout_marginBottom="32dp"/>

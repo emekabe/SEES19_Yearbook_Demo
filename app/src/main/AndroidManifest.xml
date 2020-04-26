@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_sees_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreenActivity"
+        <activity android:name=".PasswordActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity
+            android:name=".SplashScreenActivity"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,9 +26,9 @@
         <activity
             android:name=".AboutActivity"
             android:label="@string/about"
-            android:theme="@style/AboutTheme"
             android:launchMode="singleTop"
-            android:parentActivityName=".AlumnusActivity" />
+            android:parentActivityName=".AlumnusActivity"
+            android:theme="@style/AboutTheme" />
         <activity
             android:name=".PageActivity"
             android:label=""
@@ -47,17 +51,17 @@
             android:label=""
             android:launchMode="singleTop"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AlumniTheme" />
-
-<!--        The main activity -->
+            android:theme="@style/AlumniTheme" /> <!-- The main activity -->
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
     </application>
 
