@@ -70,8 +70,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:layout_marginTop="30dp"
                     android:gravity="center"
-                    android:padding="30dp">
+                    android:padding="36dp">
 
                     <Button
                         android:id="@+id/random_stat_button"
@@ -82,7 +83,7 @@
                     <Button
                         android:id="@+id/alumnus_button"
                         android:layout_width="match_parent"
-                        android:text="Alumnus of the Day"
+                        android:text="Transformer of the Day"
                         style="@style/mainButton"/>
 
                     <Button

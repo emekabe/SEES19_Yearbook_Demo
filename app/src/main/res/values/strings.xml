@@ -26,4 +26,7 @@
     </string>
     <string name="loading_image">Loading image...</string>
     <string name="view_their_page">View their page</string>
+    <string name="app_version">Version 1.1</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="continue_button">Continue</string>
 </resources>
