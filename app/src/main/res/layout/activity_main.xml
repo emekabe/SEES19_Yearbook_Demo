@@ -72,7 +72,7 @@
             <Button
                 android:id="@+id/random_stat_button"
                 style="@style/mainButton"
-                android:text="Random Stat" />
+                android:text="Random Stats" />
 
             <Button
                 android:id="@+id/alumnus_button"
