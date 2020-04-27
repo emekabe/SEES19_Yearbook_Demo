@@ -42,24 +42,25 @@ public class PasswordActivity extends AppCompatActivity {
         passwordField = findViewById(R.id.password_field);
         continueButton = findViewById(R.id.continue_button);
 
+        FirebaseDatabase myDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference reference = myDatabase.getReference("password_sources");
+        DatabaseReference passwordReference = myDatabase.getReference("password");
+
+        passwordReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                correctPassword = dataSnapshot.getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference passwordReference = database.getReference("password");
-
-                passwordReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        correctPassword = dataSnapshot.getValue(String.class);
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
 
                 if (correctPassword == null){
                     Toast.makeText(PasswordActivity.this, "Please check your internet connection", Toast.LENGTH_SHORT).show();
@@ -88,98 +89,33 @@ public class PasswordActivity extends AppCompatActivity {
 
         final String[] link = {null, null, null, null, null};
 
-        FirebaseDatabase myDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference reference = myDatabase.getReference("password_sources");
 
-        reference.child("source_1").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                link[0] = dataSnapshot.getValue(String.class);
-            }
+        for (int i = 0; i < 5; i++){
+            final int x = i;
+            reference.child("source_" + (i+1)).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                    link[x] = dataSnapshot.getValue(String.class);
+                }
 
-            }
-        });
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        reference.child("source_2").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                link[1] = dataSnapshot.getValue(String.class);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        reference.child("source_3").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                link[2] = dataSnapshot.getValue(String.class);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        reference.child("source_4").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                link[3] = dataSnapshot.getValue(String.class);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        reference.child("source_5").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                link[4] = dataSnapshot.getValue(String.class);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+                }
+            });
+        }
 
         passwordLink = findViewById(R.id.password_link);
         passwordLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Random r = new Random();
-                int linkOptions = r.nextInt(5) + 1;
+                int linkOptions = r.nextInt(5);
 
                 String chosenLink = null;
 
-                switch (linkOptions){
-                    case 1:
-                        chosenLink = link[0];
-                        break;
-                    case 2:
-                        chosenLink = link[1];
-                        break;
-                    case 3:
-                        chosenLink = link[2];
-                        break;
-                    case 4:
-                        chosenLink = link[3];
-                        break;
-                    case 5:
-                        chosenLink = link[4];
-                        break;
-                    default:
-                        // Can't happen
-                        break;
-                }
+                chosenLink = link[linkOptions];
 
                 if (chosenLink == null){
                     Toast.makeText(PasswordActivity.this,"Please check your internet connection", Toast.LENGTH_SHORT).show();
